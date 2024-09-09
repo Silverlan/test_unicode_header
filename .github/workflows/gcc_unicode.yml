@@ -15,21 +15,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Install Dependencies
+  
+      - name: Update packages
+        run: sudo apt-get update
+  
+      - name: Install latest GCC
         run: |
-          sudo apt-get update
-          sudo apt-get install -y wget tar
-
-      - name: Download GCC 14.2.0 Source Code
-        run: |
-          wget https://ftp.gnu.org/gnu/gcc/gcc-14.2.0/gcc-14.2.0.tar.gz
-          tar -xzf gcc-14.2.0.tar.gz
-
-      - name: Locate unicode.h in libstdc++
-        run: |
-          find gcc-14.2.0 -name unicode.h
-
-      - name: Print Contents of include/bits/unicode.h
-        run: |
-          cat gcc-14.2.0/libstdc++-v3/include/bits/unicode.h
+          sudo apt-get install -y gcc
+          gcc --version
+        
