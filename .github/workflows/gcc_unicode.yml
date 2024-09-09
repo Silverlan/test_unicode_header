@@ -30,8 +30,5 @@ jobs:
         
       - name: Find GCC include path and print unicode.h
         run: |
-          # Find the GCC include path
-          gcc_include_path=$(g++-14 -print-file-name=include)
-          # Print the contents of unicode.h
-          cat $gcc_include_path/bits/unicode.h
+          cat /usr/include/bits/unicode.h
 
