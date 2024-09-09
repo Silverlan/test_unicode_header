@@ -22,11 +22,9 @@ jobs:
       - name: Install latest GCC
         run: |
           sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-          sudo apt-get update
-          apt-cache search gcc | grep gcc-
-          sudo apt-get install gcc-14 g++-14
-          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 60 --slave /usr/bin/g++ g++ /usr/bin/g++-14
-          gcc --version
+          sudo apt update
+          sudo apt install gcc-14 g++-14
+          gcc-14 --version
         
       - name: Find GCC include path and print unicode.h
         run: |
