@@ -24,7 +24,7 @@ jobs:
           sudo add-apt-repository ppa:ubuntu-toolchain-r/test
           sudo apt-get update
           apt-cache search gcc | grep gcc-
-          sudo apt-get install gcc-14.2 g++-14.2
-          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14.2 60 --slave /usr/bin/g++ g++ /usr/bin/g++-14.2
+          sudo apt-get install gcc-13 g++-13
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 60 --slave /usr/bin/g++ g++ /usr/bin/g++-13
           gcc --version
         
